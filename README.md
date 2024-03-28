@@ -11,7 +11,7 @@ O projeto se baseia na construção de um site de ensino ead chamado mani cursos
 - [João Arthur (Frontend)](https://github.com/jagaldino)
 - [Ana Beatriz (Frontend)](https://github.com/beatrizcabralp)
 - [Marcelo Vieira (Frontend)](https://github.com/)
-- [Johnata Matheus (Backend)](https://github.com/)
+- [Johnata Matheus (Backend)](https://github.com/johnata-matheus)
 - [Leonardo Lucas (Backend)](https://github.com/)
 
 ## 🎨 Link do Mockup
