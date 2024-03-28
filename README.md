@@ -20,6 +20,6 @@ O projeto se baseia na construção de um site de ensino ead chamado mani cursos
 
 ## ⚙️ Tecnologias usadas
 
-- ![python-logo](https://img.shields.io/badge/python-3.10.12-grey?style=for-the-badge&logo=python&logoColor=white)
-- ![django](https://img.shields.io/badge/django-5.0.3-228B22?style=for-the-badge&logo=django)
+- ![python-logo](https://img.shields.io/badge/python-3.10.12-yellow?style=for-the-badge&logo=python&labelColor=blue&logoColor=white)
+- ![django](https://img.shields.io/badge/django-5.0.3-228B22?style=for-the-badge&logo=django&labelColor=228B22)
 
