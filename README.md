@@ -7,7 +7,7 @@ O projeto se baseia na construção de um site de ensino ead chamado mani cursos
 
 ## 👤 Membros da Equipe (SQUAD 1)
 - [Carlos Gabriel (Scrum/backend)](https://github.com/CarlosG18)
-- [Igor Natan (Frontend)](https://github.com/)
+- [Igor Natan (Frontend)](https://github.com/Igoonx)
 - [João Arthur (Frontend)](https://github.com/jagaldino)
 - [Ana Beatriz (Frontend)](https://github.com/beatrizcabralp)
 - [Marcelo Vieira (Frontend)](https://github.com/)
@@ -21,5 +21,5 @@ O projeto se baseia na construção de um site de ensino ead chamado mani cursos
 ## ⚙️ Tecnologias usadas
 
 - ![python-logo](https://img.shields.io/badge/python-3.10.12-grey?style=for-the-badge&logo=python&logoColor=white)
-- ![django](https://img.shields.io/badge/django-228B22-5.0.3-228B22?style=for-the-badge&logo=django)
+- ![django](https://img.shields.io/badge/django-5.0.3-228B22?style=for-the-badge&logo=django)
 
