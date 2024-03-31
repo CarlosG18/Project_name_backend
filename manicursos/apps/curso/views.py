@@ -1,5 +1,10 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render
+from django.views import generic
+from .models import Curso
 
-# Create your views here.
-def teste(request):
-    return HttpResponse("teste curso!")
+class CursoListView(generic.ListView):
+    model = Curso
+    context_object_name = "cursos"
+    template_name = "curso/cursos.html"
+    paginate_by = 10
+
