@@ -23,3 +23,19 @@ class Curso(models.Model):
 
     def __str__(self):
         return self.nome
+
+class Aluno(models.Model):
+    STATUS_CHOICES = {
+        1: "formado",
+        2: "cursando",
+    }
+    #definindo os campos do modelo
+    nome = models.CharField(max_length=200)
+    curso = models.ManyToManyField(Curso)
+    status = models.IntegerField(choices=STATUS_CHOICES)
+    data_entrada = models.DateField()
+    data_saida = models.DateField(null=True)
+    imagem = models.ImageField(upload_to="cursos/alunos/")
+
+    def __str__(self):
+        return self.nome
