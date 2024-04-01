@@ -50,7 +50,6 @@ class Professor(models.Model):
         1: "doutor",
         2: "mestre",
     }
-    
     nome = models.CharField(max_length=200)
     curso = models.ForeignKey(Curso, on_delete=models.CASCADE)
     titulacao = models.IntegerField(choices=TITULACAO_CHOICES)
@@ -58,3 +57,15 @@ class Professor(models.Model):
 
     def __str__(self):
         return f'{self.nome} - {self.titulacao}'
+
+class AvaliacaoProf(models.Model):
+    professor = models.ForeignKey(Professor, on_delete=models.CASCADE)
+    curso = models.ForeignKey(Curso, on_delete=models.CASCADE)
+    nota = models.DecimalField(max_digits=1,decimal_places=1)
+    comentario = models.TextField()
+
+class AvaliacaoAluno(models.Model):
+    professor = models.ForeignKey(Aluno, on_delete=models.CASCADE)
+    curso = models.ForeignKey(Curso, on_delete=models.CASCADE)
+    nota = models.DecimalField(max_digits=1,decimal_places=1)
+    comentario = models.TextField()
