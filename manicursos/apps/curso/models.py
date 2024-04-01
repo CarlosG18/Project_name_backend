@@ -39,3 +39,17 @@ class Aluno(models.Model):
 
     def __str__(self):
         return self.nome
+    
+class Professor(models.Model):
+    TITULACAO_CHOICES = {
+        1: "doutor",
+        2: "mestre",
+    }
+    
+    nome = models.CharField(max_length=200)
+    curso = models.ForeignKey(Curso, on_delete=models.CASCADE)
+    titulacao = models.IntegerField(choices=TITULACAO_CHOICES)
+    imagem = imagem = models.ImageField(upload_to="cursos/professores/")
+
+    def __str__(self):
+        return f'{self.nome} - {self.titulacao}'
