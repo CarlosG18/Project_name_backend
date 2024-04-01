@@ -34,8 +34,13 @@ class Aluno(models.Model):
     curso = models.ManyToManyField(Curso)
     status = models.IntegerField(choices=STATUS_CHOICES)
     data_entrada = models.DateField()
-    data_saida = models.DateField(null=True)
+    data_saida = models.DateField(blank=True, null=True)
     imagem = models.ImageField(upload_to="cursos/alunos/")
+
+    def save(self, *args, **kwargs):
+        if self.status == 1 and not self.data_saida:
+            raise ValueError('data de saida é obrigatória para alunos formados!')
+        super().save(*args,**kwargs)
 
     def __str__(self):
         return self.nome
