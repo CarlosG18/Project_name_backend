@@ -24,17 +24,11 @@ class Curso(models.Model):
     carga_horaria = models.IntegerField()
     descricao = models.TextField()
     imagem = models.ImageField(upload_to="cursos/")
-    preco = models.DecimalField(max_digits=5, decimal_places=2)
+    preco = models.DecimalField(max_digits=7, decimal_places=2)
 
     @property
-    def atualizar_media_prof(self):
-        media = self.avaliacaoProf_set.aggregate(media=Avg('nota'))['media']
-        self.nota = media
-        self.save()
-
-    @property
-    def atualizar_media_aluno(self):
-        media = self.avaliacaoAluno_set.aggregate(media=Avg('nota'))['media']
+    def atualizar_media(self):
+        media = self.avaliacao_set.aggregate(media=Avg('nota'))['media']
         self.nota = media
         self.save()
 
@@ -75,22 +69,15 @@ class Professor(models.Model):
     def __str__(self):
         return f'{self.nome} - {self.titulacao}'
 
-class AvaliacaoProf(models.Model):
-    professor = models.ForeignKey(Professor, on_delete=models.CASCADE)
-    curso = models.ForeignKey(Curso, on_delete=models.CASCADE)
-    nota = models.DecimalField(max_digits=1,decimal_places=1)
-    comentario = models.TextField()
-
-class AvaliacaoAluno(models.Model):
+class Avaliacao(models.Model):
     aluno = models.ForeignKey(Aluno, on_delete=models.CASCADE)
     curso = models.ForeignKey(Curso, on_delete=models.CASCADE)
-    nota = models.DecimalField(max_digits=1,decimal_places=1)
+    nota = models.DecimalField(max_digits=2,decimal_places=1)
     comentario = models.TextField()
 
-@receiver(post_save, sender=AvaliacaoProf)
-def atualizar_media_curso(sender, instance, **kwargs):
-    instance.curso.atualizar_media_prof
+    def __str__(self):
+        return f'curso = {self.curso.nome} - nota ({self.nota})'
 
-@receiver(post_save, sender=AvaliacaoAluno)
+@receiver(post_save, sender=Avaliacao)
 def atualizar_media_curso(sender, instance, **kwargs):
-    instance.curso.atualizar_media_aluno
+    instance.curso.atualizar_media
