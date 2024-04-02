@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views import generic
-from .models import Curso, Aluno
+from .models import Curso, Aluno, Professor
 
 class CursoListView(generic.ListView):
     model = Curso
@@ -16,4 +16,10 @@ def home(request):
   return render(request, "curso/home.html", {
     "cursos": cursos,
     "alunos": alunos,
+  })
+
+def sobre(request):
+  professores = Professor.objects.all()
+  return render(request, "curso/sobre.html", {
+    "professores": professores,
   })
