@@ -1,4 +1,7 @@
 from django.db import models
+from django.db.models import Avg
+from django.db.models.signals import post_save
+from django.dispatch import receiver
 
 # Create your models here.
 class Curso(models.Model):
@@ -15,11 +18,25 @@ class Curso(models.Model):
     
     #definindo os campos do modelo
     nome = models.CharField(max_length=200)
+    nota = models.DecimalField(max_digits=2, decimal_places=1, blank=True, default=0.00)
     nivel = models.IntegerField(choices=NIVEL_CHOICES)
     modalidade = models.IntegerField(choices=MODALIDADE_CHOICES)
     carga_horaria = models.IntegerField()
     descricao = models.TextField()
     imagem = models.ImageField(upload_to="cursos/")
+    preco = models.DecimalField(max_digits=5, decimal_places=2)
+
+    @property
+    def atualizar_media_prof(self):
+        media = self.avaliacaoProf_set.aggregate(media=Avg('nota'))['media']
+        self.nota = media
+        self.save()
+
+    @property
+    def atualizar_media_aluno(self):
+        media = self.avaliacaoAluno_set.aggregate(media=Avg('nota'))['media']
+        self.nota = media
+        self.save()
 
     def __str__(self):
         return self.nome
@@ -65,7 +82,15 @@ class AvaliacaoProf(models.Model):
     comentario = models.TextField()
 
 class AvaliacaoAluno(models.Model):
-    professor = models.ForeignKey(Aluno, on_delete=models.CASCADE)
+    aluno = models.ForeignKey(Aluno, on_delete=models.CASCADE)
     curso = models.ForeignKey(Curso, on_delete=models.CASCADE)
     nota = models.DecimalField(max_digits=1,decimal_places=1)
     comentario = models.TextField()
+
+@receiver(post_save, sender=AvaliacaoProf)
+def atualizar_media_curso(sender, instance, **kwargs):
+    instance.curso.atualizar_media_prof
+
+@receiver(post_save, sender=AvaliacaoAluno)
+def atualizar_media_curso(sender, instance, **kwargs):
+    instance.curso.atualizar_media_aluno
