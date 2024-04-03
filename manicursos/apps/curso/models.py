@@ -15,6 +15,11 @@ class Curso(models.Model):
         2: "semipresencial",
         3: "online",
     }
+    AREA_CHOICES = {
+        1: "Ciências Humanas",
+        2: "Ciências Exatas",
+        3: "Biociências",
+    }
     
     #definindo os campos do modelo
     nome = models.CharField(max_length=200)
@@ -24,7 +29,8 @@ class Curso(models.Model):
     carga_horaria = models.IntegerField()
     descricao = models.TextField()
     imagem = models.ImageField(upload_to="cursos/")
-    preco = models.DecimalField(max_digits=7, decimal_places=2)
+    preco = models.DecimalField(max_digits=7, decimal_places=3)
+    area = models.IntegerField(choices=AREA_CHOICES)
 
     @property
     def atualizar_media(self):

@@ -20,14 +20,13 @@
             <a class="frame" href = "{% url 'curso:home' %}">HOME</a>
             <a class="frame" href = "{% url 'curso:sobre' %}">SOBRE</a>
             <a class="frame" href = "{% url 'curso:cursos' %}">CURSOS</a>
-            <a class="frame" href = "blog.html">BLOG</a>
-            <a class="frame" href = "contato.html">CONTATO</a>
+            <a class="frame" href = "{% url 'blog:blog' %}">BLOG</a>
+            <a class="frame" href = "contato.html">CONTATO</a>   
           </div>
        </div>
 
        {% block main%}{% endblock %}
-
-
+       
        <footer>
         <div>
             <div class="logo">
@@ -98,3 +97,4 @@
     </div>
 -->
 </body>
+
