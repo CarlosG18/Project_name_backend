@@ -1,39 +1,8 @@
-/***************Layout do Footer********************/
-
-
-p{
-    font-family: Montserrat;
-    color: #262626;
-}
-
-footer{
-    background: #F97B22;
-    padding: 15px 50px 50px 50px;
-}
-
-.logo{
-    max-width: 150px;
-}
-
-.logo > img{
-    width: 100%;
-    height: 100%;
-}
-
-.bloco-principal{
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-    align-items: center;
-    margin-top: -20px;
-}
-
-.bloco > *
+body
 {
-    margin: 10px 0px;
+    margin: 0px;
 }
 
-/*
 p
 {
     font-family: Montserrat;
@@ -49,12 +18,10 @@ h4
 
 .base
 {
-    width: 1440px;
+    
     height: 400px;
     background: #F97B22;
-    
-    
-    
+      
 }
 
 .logo
@@ -63,7 +30,7 @@ h4
     height: 41px;
     top: 38px;
     left: 140px;
-    padding-left: 142px;
+    padding-left: 137px;
     padding-top: 30px;
 
 }
@@ -78,7 +45,6 @@ h4
     display: flex;
     align-items: center;
    
-    
 
 }
 
@@ -139,4 +105,4 @@ h4
     margin-top: 40px;
     padding-left: 142px;
 
-}*/
+}
