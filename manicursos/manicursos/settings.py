@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 from pathlib import Path
 import os
+from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -132,10 +133,19 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'core/static/img/')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# Configurações de email
+
+# Emails
+
+DEFAULT_FROM_EMAIL = "contatomanicursos@gmail.com"
+
+#if DEBUG:
+    #EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+#else:
+    #EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'  # Host SMTP do seu provedor de email
-EMAIL_PORT = 587  # Porta SMTP do seu provedor de email (587 é comum para TLS)
-EMAIL_USE_TLS = True  # Use TLS (Transport Layer Security) para criptografar conexões
-EMAIL_HOST_USER = 'contatomanicursos@gmail.com'  # Seu endereço de email
-EMAIL_HOST_PASSWORD = 'Contato123'  # Senha do seu email
+EMAIL_HOST_USER=config('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD=config('EMAIL_HOST_PASSWORD')
+EMAIL_USE_TLS=config('EMAIL_USE_TLS')
+EMAIL_PORT=config('EMAIL_PORT')
+EMAIL_HOST=config('EMAIL_HOST')
