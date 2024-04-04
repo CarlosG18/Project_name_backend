@@ -25,11 +25,12 @@ def contato(request):
         form_contato = FormContato(request.POST)
         if form_contato.is_valid():
             assunto = form_contato.cleaned_data["assunto"]
+            assunto_display = dict(Contato.ASSUNTO_CHOICES)[int(assunto)]
             email = form_contato.cleaned_data["email"]
             nome_usuario = form_contato.cleaned_data["nome"]
-            mensagem = f"caro {nome_usuario}, \n seu email com assunto {assunto} será repondido em breve..."
+            mensagem = f"caro {nome_usuario}, \nseu email com assunto {assunto_display} será repondido em breve..."
             send_mail(
-                assunto,
+                assunto_display,
                 mensagem,
                 settings.EMAIL_HOST_USER,  # Email remetente
                 [email],  # Lista de destinatários

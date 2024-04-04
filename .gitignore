@@ -1,0 +1,32 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Caches
+*.idea/
+*.vscode/
+*.pyc
+*.pyo
+*.pyd
+__pycache__
+
+# Log files
+*.log
+
+# Compiled Python files
+*.pyc
+
+# Static files (uncomment if using a static/ directory)
+# static/
+
+# Media files (uncomment if using a media/ directory)
+# media/
+
+# Environment variables
+.env
+
+# IDE (e.g. PyCharm) configuration
+.idea/
+.vscode/
+*.code-workspace
