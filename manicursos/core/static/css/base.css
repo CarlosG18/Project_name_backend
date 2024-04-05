@@ -1,0 +1,17 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Montserrat';
+}
+
+:root{
+    --laranja: #ff7000;
+}
+
+.flex{
+    display: flex;
+}
+
+.center{
+    align-items: center;
+}

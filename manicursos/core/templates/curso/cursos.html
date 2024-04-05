@@ -1,14 +1,223 @@
 {% extends '../base.html' %}
+{% load static %}
 {% block title %}Manicursos | Cursos {% endblock %}
+{% block style %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/cursos.css' %}">
+{% endblock %}
 
 {% block main %}
-<div>
-    <h1>teste: listando cursos:</h1>
-    {% for curso in cursos %}
-        <div>
-            <p>curso: {{curso.nome}}</p>
-        </div>
-    {% endfor %}
 
-</div>
+<!---------------------------------------- slide ------------------------------------------------>
+
+
+
+<!--------------------------------- cursos mais populares --------------------------------------->
+<section>
+    <h1 class="title">Cursos mais populares</h1>
+    
+    <div class="box-right">
+
+        <div class="circle">
+            <img class="arrow-left" src="{% static 'img/graphics/seta-direita.png' %}" alt="arrow-left">
+        </div>
+        <div class="circle">
+            <img src="{% static 'img/graphics/seta-direita.png' %}" alt="arrow-right">
+        </div>
+    </div>
+
+    <div class="card-master">
+        {% for curso in cursos_populares %}
+            <div class="card">
+
+                <div class="img-card">
+                    <img src="{{curso.imagem.url}}" alt="imagem-curso-{{curso.nome}}">
+                </div>
+
+                <div class="card-header">
+                    <h1 class="card-title">{{curso.nome}}</h1>
+                    <div class="avaliacao">   
+                        <img src="{% static 'img/graphics/estrela.png' %}" alt="estrela">
+                        <p>({{curso.nota}})</p>
+                    </div>
+                </div>
+
+                <h2>{{curso.get_modalidade_display}} - {{curso.carga_horaria}}h semanais - {{curso.get_nivel_display}}</h2>
+
+                <p class="descricao">{{curso.descricao}}</p>
+
+                <div class="card-footer">
+                    <div class="preco">
+                        <p class="preco-destaque">24x de R$ 410,90</p>
+                        <p class="preco-a-vista">ou R${{curso.preco}} à vista</p>
+                    </div>
+                    <button>ver mais</button>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</section>
+
+<!----------------------------------- todos os cursos ----------------------------------------->
+<section>
+    <h1 class="title">Todos os cursos</h1>
+    
+    <!------------------------------- ciencias humanas ---------------------------------------->
+    <div class="box">
+        <h1>Ciências Humanas</h1>
+        <div class="arrows">
+            <div class="circle">
+                <img class="arrow-left" src="{% static 'img/graphics/seta-direita.png' %}" alt="arrow-left">
+            </div>
+            <div class="circle">
+                <img src="{% static 'img/graphics/seta-direita.png' %}" alt="arrow-right">
+            </div>
+        </div>
+    </div>
+    
+    <div class="card-master">
+        {% for curso in cursos_humanas %}
+            <div class="card-small">
+
+                <div class="img-card-small">
+                    <img src="{{curso.imagem.url}}" alt="imagem-curso-{{curso.nome}}">
+                </div>
+
+                <div class="card-title-small">
+                    <h1>{{curso.nome}}</h1>
+                </div>
+                
+
+                <h2 class="subtitle-small">{{curso.get_modalidade_display}} - {{curso.carga_horaria}}h semanais - {{curso.get_nivel_display}}</h2>
+
+                <div class="card-detalhes">
+                    <div class="flex center small">
+                        <p class="small">Mais detalhes</p>
+                        <img class="arrow-down" src="{% static 'img/graphics/seta-para-baixo.png' %}" alt="">
+                    </div>    
+                    <div class="avaliacao small">   
+                        <img src="{% static 'img/graphics/estrela.png' %}" alt="estrela">
+                        <p>({{curso.nota}})</p>
+                    </div>
+                </div>
+               
+                <p class="descricao hidden slide">{{curso.descricao}}</p>
+
+                <div class="card-footer margin-small-start footersmall">
+                    <div class="preco small">
+                        <p class="preco-destaque">24x de R$ 410,90</p>
+                        <p class="preco-a-vista">ou R${{curso.preco}} à vista</p>
+                    </div>
+                    <button>ver mais</button>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+    <!------------------------------------- ciencias exatas ------------------------------------->
+    <div class="box">
+        <h1>Ciências Humanas</h1>
+        <div class="arrows">
+            <div class="circle">
+                <img class="arrow-left" src="{% static 'img/graphics/seta-direita.png' %}" alt="arrow-left">
+            </div>
+            <div class="circle">
+                <img src="{% static 'img/graphics/seta-direita.png' %}" alt="arrow-right">
+            </div>
+        </div>
+    </div>
+    
+    <div class="card-master">
+        {% for curso in cursos_humanas %}
+            <div class="card-small">
+
+                <div class="img-card-small">
+                    <img src="{{curso.imagem.url}}" alt="imagem-curso-{{curso.nome}}">
+                </div>
+
+                <div class="card-title-small">
+                    <h1>{{curso.nome}}</h1>
+                </div>
+                
+
+                <h2 class="subtitle-small">{{curso.get_modalidade_display}} - {{curso.carga_horaria}}h semanais - {{curso.get_nivel_display}}</h2>
+
+                <div class="card-detalhes">
+                    <div class="flex center small">
+                        <p class="small">Mais detalhes</p>
+                        <img class="arrow-down" src="{% static 'img/graphics/seta-para-baixo.png' %}" alt="">
+                    </div>    
+                    <div class="avaliacao small">   
+                        <img src="{% static 'img/graphics/estrela.png' %}" alt="estrela">
+                        <p>({{curso.nota}})</p>
+                    </div>
+                </div>
+               
+                <p class="descricao hidden slide">{{curso.descricao}}</p>
+
+                <div class="card-footer margin-small-start footersmall">
+                    <div class="preco small">
+                        <p class="preco-destaque">24x de R$ 410,90</p>
+                        <p class="preco-a-vista">ou R${{curso.preco}} à vista</p>
+                    </div>
+                    <button>ver mais</button>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+    <!------------------------------------- biomedica ------------------------------------------->
+    <div class="box">
+        <h1>Ciências Humanas</h1>
+        <div class="arrows">
+            <div class="circle">
+                <img class="arrow-left" src="{% static 'img/graphics/seta-direita.png' %}" alt="arrow-left">
+            </div>
+            <div class="circle">
+                <img src="{% static 'img/graphics/seta-direita.png' %}" alt="arrow-right">
+            </div>
+        </div>
+    </div>
+    
+    <div class="card-master">
+        {% for curso in cursos_humanas %}
+            <div class="card-small">
+
+                <div class="img-card-small">
+                    <img src="{{curso.imagem.url}}" alt="imagem-curso-{{curso.nome}}">
+                </div>
+
+                <div class="card-title-small">
+                    <h1>{{curso.nome}}</h1>
+                </div>
+                
+
+                <h2 class="subtitle-small">{{curso.get_modalidade_display}} - {{curso.carga_horaria}}h semanais - {{curso.get_nivel_display}}</h2>
+
+                <div class="card-detalhes">
+                    <div class="flex center small">
+                        <p class="small">Mais detalhes</p>
+                        <img class="arrow-down" src="{% static 'img/graphics/seta-para-baixo.png' %}" alt="">
+                    </div>    
+                    <div class="avaliacao small">   
+                        <img src="{% static 'img/graphics/estrela.png' %}" alt="estrela">
+                        <p>({{curso.nota}})</p>
+                    </div>
+                </div>
+               
+                <p class="descricao hidden slide">{{curso.descricao}}</p>
+
+                <div class="card-footer margin-small-start footersmall">
+                    <div class="preco small">
+                        <p class="preco-destaque">24x de R$ 410,90</p>
+                        <p class="preco-a-vista">ou R${{curso.preco}} à vista</p>
+                    </div>
+                    <button>ver mais</button>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</section>
+
+<!------------------------------------ quem foi aluno aprova ------------------------------------->
+
 {% endblock%}

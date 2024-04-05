@@ -12,7 +12,8 @@
     <!-- arquivos estaticos css-->
     <link rel="stylesheet" type="text/css" href="{% static 'css/nav.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/footer.css' %}">
-    
+    <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+    {% block style %}{% endblock %}
    </head>
 
    <body>
@@ -44,6 +45,10 @@
 
      {% block main%}{% endblock %}
      
+
+    <!-- scripts js-->
+    <script src="{% static 'js/slider.js' %}"></script>
+
     <!---------------------------------FOOTER------------------------------------------------>
     <div class="base">
 
