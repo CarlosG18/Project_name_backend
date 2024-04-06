@@ -4,17 +4,57 @@
 
 {% block style %}
     <link rel="stylesheet" type="text/css" href="{% static 'css/cursos.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
 {% endblock %}
 
 {% block main %}
 <!--------------------------------------- header ------------------------------------------------>
 <header>
-    <div class="box">
-        <h1>Bem vindo a educação <span class="">Mani</span> de <span>qualidade</span></h1>
+    <div class="box-header">
+        <h1>Bem vindo a educação <span class="barraLaranja">Mani</span> de <span class="text-orange">qualidade</span></h1>
+        
+        <div class="subtitle">
+            <p>Com a<span class="inline mani-cursos"> Mani cursos </span> você pode ficar tranquilo, seu futuro está em boas mãos</p>
+        </div>
+        
+        <div class="explorar flex">
+            
+            <a href="{% url 'curso:cursos' %}">
+                <div class="circle">
+                    <img src="" alt="">
+                </div>
+                <p>explorar cursos</p>
+            </a>
+
+            <div class="estudando flex">
+                <div class="circle"><img src="" alt=""></div>
+                <div class="circle"><img src="" alt=""></div>
+                <div class="circle"><img src="" alt=""></div>
+            </div>
+        
+        </div>
+    
+    </div>
+
+    <div class="fotos">
+
     </div>
 </header>
 
+<div class="circle-full c1 bg-orange"></div>
+<div class="circle-full c2 bg-orange"></div>
+<div class="circle-full c3 bg-orange"></div>
+<div class="circle-full c4 bg-orange"></div>
 
+<div class="circle-full2 c-1 bg-black"></div>
+<div class="circle-full2 c-2 bg-black"></div>
+
+<div class="circle-empty c-1-1"></div>
+<div class="circle-empty-1 c-1-2"></div>
+
+<div class="circle-full-70 bg-black"></div>
+
+<div class="circle-dotted bg-black"></div>
 
 
 

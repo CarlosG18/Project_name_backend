@@ -21,3 +21,19 @@
     text-decoration-color: #F97B22;
     text-underline-offset: 4px;
 }
+
+.inline{
+    display: contents;
+}
+
+.text-orange{
+    color: var(--laranja)
+}
+
+.bg-orange{
+    background-color: var(--laranja);
+}
+
+.bg-black{
+    background-color: black;
+}
