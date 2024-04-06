@@ -2,8 +2,6 @@ const arrow_down = document.querySelectorAll('.arrow-down')
 const descricoes = document.querySelectorAll('.slide')
 const footers = document.querySelectorAll('.footersmall')
 
-console.log(footers)
-
 arrow_down.forEach((button, index) => {
     button.addEventListener('click', () => {
         console.log(index)

@@ -1,13 +1,34 @@
 {% extends '../base.html' %}
+{% load static %}
+
 {% block title %}Manicursos | Noticias {% endblock %}
 
+{% block style %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/blog.css' %}">
+{% endblock %}
 
 {% block main %}
-    <h1>teste: listando noticias:</h1>
-    {% for noticia in noticias %}
-        <div>
-            <p>noticia: {{noticia.titulo}}</p>
-            <a href="{% url 'blog:noticia' noticia.id %}">link para a noticia</a>
-        </div>
-    {% endfor %}
+<header>
+    <div class="headline-container">
+        <h1 class="headline-h1">Últimas Notícias</h1>
+        <p class="headline-p">Est recusandae fugit qui quia voluptas ut ratione
+            <span class="subtext">iusto aut accusamus voluptatem.</span>
+        </p>
+    </div>
+</header>
+<div id="divBusca">
+    <input type="text" id="txtBusca" placeholder="Buscar curso"/>
+    <img src="{% static 'img/graphics/search-outline.svg' %}" id="btnBusca" alt="Buscar"/>
+  </div>
+    <div class="banner-container">
+        {% for noticia in noticias %}
+        <div class="banner-card">
+            <img class="banner-imagem" src="{{noticia.imagem.url}}" alt="Imagem Banner">
+            <h1 class="banner-titulo">{{noticia.titulo}}</h1>
+            <p class="banner-paragrafo">{{noticia.subtitulo}}</p>
+            <p class="banner-data"><img src="{% static 'img/graphics/icon-heart.png' %}">10 de outubro de 2023</p>
+            <a href="{% url 'blog:noticia' noticia.id %}" class="banner-bottom">LER MAIS</a>
+            </div>
+        {% endfor %}
+    </div>
 {% endblock%}

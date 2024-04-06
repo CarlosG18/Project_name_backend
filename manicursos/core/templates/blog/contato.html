@@ -1,11 +1,76 @@
 {% extends '../base.html' %}
+{% load static %}
+
 {% block title %} Manicursos | Fale Conosco {% endblock %}
 
-
+{% block style %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/contato.css' %}">
+{% endblock %}
+    
 {% block main %}
-    <form action="{% url 'blog:contato' %}" method="post">
-        {% csrf_token %}
-        {{form_contato}}
-        <button type="submit">enviar</button>
-    </form>
+
+     <!--------------------------INÍCIO DA TELA CONTATO----------------------------------------------->
+
+     <div class="tela-contato">
+
+        <!------------------------INICIO DO MAPA--------------------------------->
+        <!--<div class="espaco-mapa"></div>-->
+
+        <div class="espaco-mapa">
+          <div class="mapa">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.3824649540793!2d-74.00225329999999!3d40.731609!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25993bf2d3301%3A0xdac8491f98dc8e76!2s23%20Cornelia%20St%2C%20New%20York%2C%20NY%2010014%2C%20EUA!5e0!3m2!1spt-BR!2sbr!4v1712281807625!5m2!1spt-BR!2sbr" width="615" height="320" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+
+          <div class="endereco">
+              <p>23 Cornelia St, New York, NY 10014, Estados Unidos</p>
+          </div>
+        </div>
+
+
+        <!---------------------------FINAL DO MAPA----------------------------------------->
+
+     <!------------------INICIO DO FORMULÁRIO-------------------------->
+      <div class="formulario">
+
+          <h3>Fale conosco</h3>
+
+                  <!---------DIV DO PARÁGRAFO-------->
+          <div>
+             <p class="lorem">Lorem ipsum dolor sit amet. Rem itaque sequi et 
+             commodi illo et autem beatae sit quis cumque quo 
+             fugiat veniam.</p>
+          </div>
+         
+                <!----------INICIO DA DIV DO FORM ASSUNTO------------>
+          <div>
+
+              <form action="{% url 'blog:contato' %}" method="post">
+                {% csrf_token %}
+                    <div>
+                        {{form_contato.assunto}}
+                    </div>
+                    
+                    <div>
+                        {{form_contato.nome}}
+                    </div>
+                    
+                    <div class="input-email">
+                        {{form_contato.email}}
+                    </div>
+
+                    <div class="input-mensagem">
+                        {{form_contato.mensagem}}
+                    </div>
+                    <button type="submit" class="botao-enviar">Enviar</button>   
+              </form>
+
+          </div>
+              
+                
+        </div>
+
+    </div>
+<!-----------------------------FINAL DA TELA CONTATO-------------------------------------------------->
+
 {% endblock%}
+

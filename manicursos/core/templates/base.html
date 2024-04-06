@@ -1,3 +1,4 @@
+<!---------------------------------- base template -------------------------------------------->
 <!DOCTYPE html>
 {% load static %}
 <html>
@@ -5,32 +6,39 @@
    <head>
 
     <meta charset="utf-8">
-
     <title>{% block title %}{% endblock %}</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'img/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'img/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'img/favicon-16x16.png' %}">
+    <link rel="manifest" href="{% static 'img/site.webmanifest' %}">
+    <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}" type="image/x-icon">
+    
     <!--- links para fontes-->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
     <!-- arquivos estaticos css-->
     <link rel="stylesheet" type="text/css" href="{% static 'css/nav.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/footer.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+    
     {% block style %}{% endblock %}
+
    </head>
 
    <body>
 
+    <!-------------------------------NAVBAR--------------------------------------->
     <div class="barra">
 
         <div class="imagem">
-            <img src="{% static 'img/manilogo.svg' %}">
+            <a href="{% url 'curso:home' %}">
+                <img src="{% static 'img/manilogo.svg' %}">
+            </a>
         </div>
-
-        <!--  <img class="imagem" src="../img/manilogo.svg"> -->
         
-        <div><p class="line"></p></div> 
+        <div class="flex center"><p class="line"></p></div> 
 
         <div class="frame">
-
-          <!-- <div><p class="line"></p></div> -->
 
             <a class="frame" href = "{% url 'curso:home' %}">HOME</a>
             <a class="frame" href = "{% url 'curso:sobre' %}">SOBRE</a>
@@ -40,19 +48,24 @@
 
         </div>
 
-     </div>
-     <!--------------------------------MAIN--------------------------------------------------->
+    </div>
 
-     {% block main%}{% endblock %}
-     
+     <!---------------------------------FINAL DO NAVBAR-------------------------------------------->
+    
+     <!---------------------------------------MAIN------------------------------------------------>
 
+    {% block main%}{% endblock %}
+
+    {% block script %}{% endblock %} 
     <!-- scripts js-->
     <script src="{% static 'js/slider.js' %}"></script>
 
-    <!---------------------------------FOOTER------------------------------------------------>
+      <!----------------------------INÍCIO DO FOOTER------------------------------------------------>
     <div class="base">
 
-        <img class="logo" src="{% static 'img/manilogo.svg' %}">
+        <a href="{% url 'curso:home' %}">
+            <img class="logo" src="{% static 'img/manilogo.svg' %}">
+        </a>
         
         <div class="bloco-principal">
 
@@ -63,7 +76,9 @@
             <p>contato@manicursos.com.br</p>
             <p>+1-2345-6789</p>
             <p>23 Cornelia St, NY 10014, EUA</p>
-            <img class="redes" src="{% static 'img/redes_sociais.svg' %}"> 
+            <a href="https://www.facebook.com/ejectufrn/" target="_blank">
+                <img class="redes" src="{% static 'img/redes_sociais.svg' %}"> 
+            </a>
             
 
            </div>
@@ -100,11 +115,13 @@
 
             <p>Copyright © 2023. All rights reserved.</p>
             
-        </div>
+           </div>
            
 
        
     </div>
+
+    <!---------------------------FINAL DO FOOTER--------------------------->
 
    </body>
 

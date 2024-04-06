@@ -1,0 +1,126 @@
+
+.headline-container {
+    height: 186px;
+    top: 160px; /* Ajuste conforme necessário */
+    gap: 0px;
+    opacity: 1; /* Altere a opacidade para visível */
+    background-color: #F97B22; /* Cor de fundo laranja */
+  }
+  
+  .headline-h1 {
+    color: #FFFFFF;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 64px;
+    padding-top: 25px;
+  }
+  
+  .headline-p {
+    font-family: DM Sans;
+    font-size: 16px;
+    font-weight: 400;
+    text-align: center;
+    color: #FFFFFF;
+    width: 100%;
+  }
+  
+  .subtext {
+    display: block;
+    width: 100%;
+  }
+  
+  #divBusca {
+    width: 195px;
+    height:31px;
+    top: 406px;
+    left: 1091px;
+    padding: 20px 0px 0px 0px;
+    gap: 55px;
+    border-radius: 90px;
+    opacity: 0px;
+    border: 1px solid rgba(38, 38, 38, 1)  
+  }
+  
+  #txtBusca {
+    width: 91px;
+    height: 30px;
+    gap: 0px;
+    opacity: 0px;
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 30px;
+    text-align: center;
+    color: rgba(143, 143, 143, 1);
+  }    
+  
+  #btnBusca{
+    width: 14px;
+  height: 14px;
+  
+  }
+  
+  /* Estilos responsivos para banners */
+  .banner-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap; 
+    gap: 30px; 
+  }
+  
+  .banner-card {
+    display: flex; 
+    flex-direction: column;
+    width: 467px; 
+    padding: 100px
+  
+  }
+  .banner-imagem {
+      width: 467px;
+      height: 270px;
+    border-radius: 20px;
+    object-fit: cover;
+  }
+  
+  .banner-titulo {
+    font-family: Montserrat;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 32px;
+    text-align: left;
+  }
+  
+  .banner-paragrafo {
+    font-family: DM Sans;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: justify;
+  }
+  
+  .banner-data {
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+    color: #95A1BB;
+    display: flex;
+    align-items: center;
+  }
+  
+  .banner-data img {
+    margin-right: 10px; /* Adicionar espaço entre o ícone e o texto */
+  }
+  
+  .banner-bottom {
+    font-family: DM Sans;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: 2px;
+    color: black;
+  }
+  
