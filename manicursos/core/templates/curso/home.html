@@ -6,13 +6,45 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/cursos.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/aluno-aprova.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/sobre.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/imagens-laterais.css' %}">
 {% endblock %}
 
 {% block main %}
 <!--------------------------------------- header ------------------------------------------------>
-<header>
+
+<div class="imagens-laterais">
+
+    <div class="lateral-6">
+        <img src="{% static 'img/home/lateral-6.png' %}">
+    </div>
+
+    <div class="lateral-5">
+        <img src="{% static 'img/home/lateral-5.png' %}">
+    </div>
+
+    <div class="lateral-4">
+        <img src="{% static 'img/home/lateral-4.png' %}">
+    </div>
+
+    <div class="lateral-3">
+        <img src="{% static 'img/home/lateral-3.png' %}">
+    </div>
+
+    <div class="lateral-2">
+        <img src="{% static 'img/home/lateral-2.png' %}">
+    </div>
+
+    <div class="lateral-1">
+        <img src="{% static 'img/home/lateral-1.png' %}">
+    </div>
+
+  </div>
+
+  <header>
+
     <div class="box-header">
-        <h1>Bem vindo a educação <span class="barraLaranja">Mani</span> de <span class="text-orange">qualidade</span></h1>
+        <h1 style="margin-top: -830px;">Bem vindo a educação <span class="barraLaranja">Mani</span> de <span class="text-orange">qualidade</span></h1>
         
         <div class="subtitle">
             <p>Com a<span class="inline mani-cursos"> Mani cursos </span> você pode ficar tranquilo, seu futuro está em boas mãos</p>
@@ -38,12 +70,14 @@
             </div>
         
         </div>
+
     
     </div>
 
     <div class="fotos">
 
     </div>
+
 </header>
 
 <div class="circle-full c1 bg-orange"></div>
@@ -60,8 +94,6 @@
 <div class="circle-full-70 bg-black"></div>
 
 <div class="circle-dotted bg-black"></div>
-
-
 
 <!--------------------------------- cursos mais populares --------------------------------------->
 <section>
@@ -111,8 +143,34 @@
 
 <!---------------------------------------- nossa historia --------------------------------------->
 
-
-
+<div class="box-nossa">
+    <div class="container">
+        <div class="carrossel carrossel-tam">
+            <div class="img-carrossel img1">
+                <img src="../../static/img/sobre/PH HIST 001.jpg" alt="">
+            </div>
+            <div class="img-carrossel img2">
+                <img src="../../static/img/sobre/PH HIST 002.jpg" alt="">
+            </div>
+            <div class="img-carrossel img3">
+                <img src="../../static/img/sobre/PH HIST 003.jpg" alt="">
+            </div>
+            
+        </div>
+        <div class="nav">
+            <div class="circle-carrossel active"></div>
+            <div class="circle-carrossel"></div>
+            <div class="circle-carrossel"></div>
+        </div>
+    </div>
+    
+    <div class="textoUm">
+        <h1 class="titulos">Nossa <span class="barraLaranja">História</span></h1>
+        <p id="descricaoUm">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+            incididunt ut labore et
+            dolore magna aliqua. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.</p>
+    </div>
+</div>
 
 <!---------------------------------- quem já foi aluno aprova! ----------------------------------->
 
@@ -122,7 +180,7 @@
     <div class="slider-aluno">
         {% for aluno in alunos %}
         <div class="card-aluno">
-            <img src="{{aluno.imagem.url}}" alt="">
+            <img class="br-40" src="{{aluno.imagem.url}}" alt="">
             <div class="descricao-aluno">
                 <p class="p-nome">{{aluno.nome}}</p>
                 <p class="p-curso">{{aluno.curso.nome}} ({{aluno.data_entrada}}-{{aluno.data_saida}})</p>
@@ -135,3 +193,7 @@
 
 
 {% endblock%}
+
+{% block script %}
+    <script src="{% static 'js/carrossel.js' %}"></script>
+{% endblock %}

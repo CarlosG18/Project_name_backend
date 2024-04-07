@@ -152,3 +152,14 @@ header{
     top: 687px;
     right: -53px;
 }
+/* ---------------------------------------fim das bolas ---------------------------------------*/
+
+.box-nossa{
+    display: flex;
+    margin: 150px 50px;
+}
+
+.carrossel-tam{
+    width: 700px;
+    height: 300px;
+}

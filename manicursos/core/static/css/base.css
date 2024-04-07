@@ -1,6 +1,6 @@
 *{
-    padding: 0;
-    margin: 0;
+    /*padding: 0;*/
+    /*margin: 0;*/
     font-family: 'Montserrat';
 }
 
@@ -44,4 +44,12 @@
 
 .fs-45{
     font-size: 45px;
+}
+
+.br-40{
+    border-radius: 40px;
+}
+
+.end{
+    justify-content: end;
 }

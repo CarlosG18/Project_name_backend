@@ -1,20 +1,24 @@
+p{
+  margin: 0;
+}
 
 .headline-container {
-    height: 186px;
-    top: 160px; /* Ajuste conforme necessário */
-    gap: 0px;
-    opacity: 1; /* Altere a opacidade para visível */
-    background-color: #F97B22; /* Cor de fundo laranja */
-  }
-  
+    background-color: #F97B22;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
   .headline-h1 {
+    margin: 10px 0;
     color: #FFFFFF;
     text-align: center;
     font-family: Montserrat;
     font-size: 48px;
     font-weight: 700;
     line-height: 64px;
-    padding-top: 25px;
   }
   
   .headline-p {
@@ -23,7 +27,6 @@
     font-weight: 400;
     text-align: center;
     color: #FFFFFF;
-    width: 100%;
   }
   
   .subtext {
@@ -31,16 +34,30 @@
     width: 100%;
   }
   
-  #divBusca {
-    width: 195px;
-    height:31px;
-    top: 406px;
-    left: 1091px;
-    padding: 20px 0px 0px 0px;
-    gap: 55px;
-    border-radius: 90px;
-    opacity: 0px;
-    border: 1px solid rgba(38, 38, 38, 1)  
+.busca {
+    position: relative;
+    margin: 50px 130px 0 0;
+  }
+
+  .box-img{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 3px;
+    right: 14px;
+  }
+
+  .box-img > img{
+    width: 100%;
+  }
+  
+
+  .txtBusca{
+    padding: 5px 7px;
+    border-radius: 20px;
+    border-style: none;
+    border: 2px solid rgba(0, 0, 0, 0.363);
+    text-indent: 10px;
   }
   
   #txtBusca {
