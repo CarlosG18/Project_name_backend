@@ -114,4 +114,22 @@
 
 
 <!---------------------------------- quem já foi aluno aprova! ----------------------------------->
+
+<div class="box-aluno">
+    <h1>Quem já foi aluno <span class="text-orange">aprova!</span></h1>
+    <div class="slider-aluno">
+        {% for aluno in alunos %}
+        <div class="card-aluno">
+            <img src="{{aluno.imagem.url}}" alt="">
+            <div class="descricao-aluno">
+                <p class="p-nome">{{aluno.nome}}</p>
+                <p class="p-curso">{{aluno.curso.nome}} ({{aluno.data_entrada}}-{{aluno.data_saida}})</p>
+                <p class="p-descricao">"lorem ipsum dolor sit amet consectetur. id nunc ultrices eget risus at accumsan. Urna</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+
 {% endblock%}
