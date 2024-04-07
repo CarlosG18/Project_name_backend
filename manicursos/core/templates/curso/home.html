@@ -4,6 +4,7 @@
 
 {% block style %}
     <link rel="stylesheet" type="text/css" href="{% static 'css/cursos.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/aluno-aprova.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
 {% endblock %}
 
@@ -64,7 +65,7 @@
 
 <!--------------------------------- cursos mais populares --------------------------------------->
 <section>
-    <h1 class="title">Cursos mais populares</h1>
+    <h1 class="fs-45">Cursos mais populares</h1>
     
     <div class="box-right">
 
@@ -116,7 +117,8 @@
 <!---------------------------------- quem já foi aluno aprova! ----------------------------------->
 
 <div class="box-aluno">
-    <h1>Quem já foi aluno <span class="text-orange">aprova!</span></h1>
+    <h1 class="mb-50 fs-45">Quem já foi aluno <span class="text-orange">aprova!</span></h1>
+    
     <div class="slider-aluno">
         {% for aluno in alunos %}
         <div class="card-aluno">

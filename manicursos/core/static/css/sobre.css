@@ -1,8 +1,63 @@
+/* ---------------------------------------- carrossel -------------------------------------------------------------*/
+
+.container{
+    position: relative;
+}
+
+.carrossel{
+    position: relative;
+    width: 500px;
+    height: 250px;
+    background-color: black;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.404);
+}
+
+.img-carrossel{
+    position: absolute;
+    width: 100%;
+    height: 250px;
+    transition: all 1s ease-in;
+}
+
+.img-carrossel > img{
+    width: 100%;
+}
+
+.nav{
+    position: absolute;
+    bottom: 0;
+    left: 31%;
+    width: 200px;
+    height: 50px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.circle-carrossel{
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    border: 2px solid white;
+    transition: all 0.3s ease;
+}
+
+.circle-carrossel:hover{
+    background-color: white;
+    cursor: pointer;
+}
+
+.active{
+    background-color: white;
+}
+
 .containerUm {
     display: flex;
     margin-top: 60px;
     justify-content: center;
-
+    height: 250px;
 }
 
 .textoUm {
@@ -17,11 +72,13 @@
     color: #262626;
 }
 
+
+/* ------------------------------------------------fim do carrossel -------------------------------------------------*/
 .containerDois {
     display: flex;
-    flex-direction: row-reverse;
-    margin-top: 90px;
+    margin-top: 150px;
     justify-content: center;
+    height: 250px;
 }
 
 .textoDois {

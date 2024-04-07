@@ -4,6 +4,7 @@
 {% block style %}
     <link rel="stylesheet" type="text/css" href="{% static 'css/cursos.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/carrossel.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/aluno-aprova.css' %}">
 {% endblock %}
 
 {% block main %}
@@ -244,6 +245,22 @@
 </section>
 
 <!------------------------------------ quem foi aluno aprova ------------------------------------->
+<div class="box-aluno">
+    <h1 class="mb-50 fs-45">Quem já foi aluno <span class="text-orange">aprova!</span></h1>
+    
+    <div class="slider-aluno">
+        {% for aluno in alunos %}
+        <div class="card-aluno">
+            <img src="{{aluno.imagem.url}}" alt="">
+            <div class="descricao-aluno">
+                <p class="p-nome">{{aluno.nome}}</p>
+                <p class="p-curso">{{aluno.curso.nome}} ({{aluno.data_entrada}}-{{aluno.data_saida}})</p>
+                <p class="p-descricao">"lorem ipsum dolor sit amet consectetur. id nunc ultrices eget risus at accumsan. Urna</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
 
 {% endblock%}
 
