@@ -1,6 +1,4 @@
 *{
-    /*padding: 0;*/
-    /*margin: 0;*/
     font-family: 'Montserrat';
 }
 
@@ -52,4 +50,8 @@
 
 .end{
     justify-content: end;
+}
+
+.column{
+    flex-direction: column;
 }

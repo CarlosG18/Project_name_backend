@@ -1,5 +1,5 @@
 header{
-    margin: 230px 50px 400px 50px;
+    margin: 230px 50px 0px 50px;
 }
 
 .box-header{
@@ -59,6 +59,26 @@ header{
     align-items: center;
     justify-content: center;
 }
+
+.circles{
+    display: flex;
+    margin-left: 10px;
+}
+
+.circle-aluno{
+    width: 50px;
+    border-radius: 50%;
+}
+
+.circle-aluno > img{
+    width: 100%;
+}
+
+.estudando > p{
+    margin: 0;
+    text-align: center;
+}
+
 
 /*----------------------------------------------------- parte das bolas ----------------------------------------------*/
 .circle-full{

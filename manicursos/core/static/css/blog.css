@@ -140,4 +140,20 @@ p{
     letter-spacing: 2px;
     color: black;
   }
+
+  .custom-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 322px;
+    padding: 12px 16px;
+    border-radius: 90px;
+    border: 1px solid rgba(120, 120, 120, 1);
+    background: transparent;
+    color: rgba(120, 120, 120, 1);
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 5;
+    margin-bottom: 70px;
+  }
   

@@ -28,31 +28,27 @@
    <body>
 
     <!-------------------------------NAVBAR--------------------------------------->
-    <div  style="float: inline-start; clear: none;" class="barra">
+    <div class="barra">
 
         <div class="imagem">
             <a href="{% url 'curso:home' %}">
                 <img src="{% static 'img/manilogo.svg' %}">
             </a>
         </div>
-
-        <!--  <img class="imagem" src="../img/manilogo.svg"> -->
         
-        <div><p class="line"></p></div> 
+        <div class="flex center"><p class="line"></p></div> 
 
-        <div style="border-bottom: 10px solid white;" class="frame">
+        <div class="frame">
 
-          <!-- <div><p class="line"></p></div> -->
-
-          <a class="frame" href = "{% url 'curso:home' %}">HOME</a>
-          <a class="frame" href = "{% url 'curso:sobre' %}">SOBRE</a>
-          <a class="frame" href = "{% url 'curso:cursos' %}">CURSOS</a>
-          <a class="frame" href = "{% url 'blog:blog' %}">BLOG</a>
-          <a class="frame" href = "{% url 'blog:contato' %}">CONTATO</a>
+            <a class="frame" href = "{% url 'curso:home' %}">HOME</a>
+            <a class="frame" href = "{% url 'curso:sobre' %}">SOBRE</a>
+            <a class="frame" href = "{% url 'curso:cursos' %}">CURSOS</a>
+            <a class="frame" href = "{% url 'blog:blog' %}">BLOG</a>
+            <a class="frame" href = "{% url 'blog:contato' %}">CONTATO</a>
 
         </div>
 
-     </div>
+    </div>
 
      <!---------------------------------FINAL DO NAVBAR-------------------------------------------->
     
@@ -65,50 +61,50 @@
     <script src="{% static 'js/slider.js' %}"></script>
 
       <!----------------------------INÍCIO DO FOOTER------------------------------------------------>
-      <div style="width: 1800px; align-items: center;margin-bottom: -300px; " class="base" >
+    <div class="base">
 
         <a href="{% url 'curso:home' %}">
             <img class="logo" src="{% static 'img/manilogo.svg' %}">
         </a>
         
-        <div style="margin:7px" class="bloco-principal">
+        <div class="bloco-principal">
 
            <div class="bloco-1">
 
-            <h4 style="padding-bottom: 1px; padding-top: 30px;">Entre em contato</h4>
+            <h4>Entre em contato</h4>
 
-            <p style="padding: 10px; padding-left: 0;">contato@manicursos.com.br</p>
-            <p style="padding: 10px; padding-left: 0;">+1-2345-6789</p>
-            <p style="padding: 10px; padding-left: 0;">23 Cornelia St, NY 10014, EUA</p>
+            <p>contato@manicursos.com.br</p>
+            <p>+1-2345-6789</p>
+            <p>23 Cornelia St, NY 10014, EUA</p>
             <a href="https://www.facebook.com/ejectufrn/" target="_blank">
                 <img class="redes" src="{% static 'img/redes_sociais.svg' %}"> 
-            </a> 
+            </a>
             
 
            </div>
 
            
-           <div style="padding-top: 50px;" class="bloco-2" >
+           <div class="bloco-2">
 
-            <h4 style="padding-bottom: 3px;">FAQ</h4>
+            <h4>FAQ</h4>
 
-            <p style="padding: 6px; padding-left: 0;">Auctor volupat.</p>
-            <p style="padding: 6px; padding-left: 0;">Fermentum turpis.</p>
-            <p style="padding: 6px; padding-left: 0;">Mi consequat.</p>
-            <p style="padding: 6px; padding-left: 0;">Amet venenatis.</p>
-            <p style="padding: 6px; padding-left: 0;">Convalis porttitor.</p>
+            <p>Auctor volupat.</p>
+            <p>Fermentum turpis.</p>
+            <p>Mi consequat.</p>
+            <p>Amet venenatis.</p>
+            <p>Convalis porttitor.</p>
 
            </div>
 
-           <div style="padding-top: 50px;" class="bloco-3">
+           <div class="bloco-3">
 
-            <h4 style="padding-bottom: 3px;">Central de Ajuda</h4>
+            <h4>Central de Ajuda</h4>
 
-            <p style="padding: 6px; padding-left: 0;">Egestas vitae.</p>
-            <p style="padding: 6px; padding-left: 0;">Viverra Iorem ac.</p>
-            <p style="padding: 6px; padding-left: 0;">Eget ac tellus.</p>
-            <p style="padding: 6px; padding-left: 0;">Erat nulla.</p>
-            <p style="padding: 6px; padding-left: 0;">Vulputate proin.</p>
+            <p>Egestas vitae.</p>
+            <p>Viverra Iorem ac.</p>
+            <p>Eget ac tellus.</p>
+            <p>Erat nulla.</p>
+            <p>Vulputate proin.</p>
 
            </div>
 
@@ -124,6 +120,7 @@
 
        
     </div>
+
     <!---------------------------FINAL DO FOOTER--------------------------->
 
    </body>

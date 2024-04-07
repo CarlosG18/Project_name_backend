@@ -10,9 +10,10 @@
    margin-left: 1100px;
   /* border: 1px solid red;*/
    clear: right;
-   
-   
-
+   position: relative;
+   top: 0;
+   left: -300px;
+   z-index: 1;
 }
 
 .lateral-1
