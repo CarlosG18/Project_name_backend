@@ -19,17 +19,21 @@
         
         <div class="explorar flex">
             
-            <a href="{% url 'curso:cursos' %}">
-                <div class="circle">
-                    <img src="" alt="">
+            <a class="link-explorar" href="{% url 'curso:cursos' %}">
+                <div class="circle-explorar bg-orange">
+                    <img src="{% static 'img/graphics/Line.svg' %}" alt="">
                 </div>
-                <p>explorar cursos</p>
+                <p class="text-explorar">explorar cursos</p>
             </a>
 
             <div class="estudando flex">
-                <div class="circle"><img src="" alt=""></div>
-                <div class="circle"><img src="" alt=""></div>
-                <div class="circle"><img src="" alt=""></div>
+                <div class="circles">
+                    <div class="circle"><img src="{% static 'img/home/icon 001 1.svg' %}" alt=""></div>
+                    <div class="circle"><img src="{% static 'img/home/icon 002 1.svg' %}" alt=""></div>
+                    <div class="circle"><img src="{% static 'img/home/icon 003 1.svg' %}" alt=""></div>
+                </div>
+                <p>78.926 alunos</p>
+                <p>estudando agora</p>
             </div>
         
         </div>
