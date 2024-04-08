@@ -6,20 +6,20 @@ from django.dispatch import receiver
 # Create your models here.
 class Curso(models.Model):
     #definindo alguns choices
-    NIVEL_CHOICES = {
-        "1": "superior",
-        "2": "técnico",
-    }
-    MODALIDADE_CHOICES = {
-        "1": "presencial",
-        "2": "semipresencial",
-        "3": "online",
-    }
-    AREA_CHOICES = {
-        "1": "Ciências Humanas",
-        "2": "Ciências Exatas",
-        "3": "Biociências",
-    }
+    NIVEL_CHOICES = [
+        ("1","superior"),
+        ("2","técnico"),
+    ]
+    MODALIDADE_CHOICES = [
+        ("1", "presencial"),
+        ("2", "semipresencial"),
+        ("3", "online"),
+    ]
+    AREA_CHOICES = [
+        ("1", "Ciências Humanas"),
+        ("2", "Ciências Exatas"),
+        ("3", "Biociências"),
+    ]
     
     #definindo os campos do modelo
     nome = models.CharField(max_length=200)
@@ -42,10 +42,10 @@ class Curso(models.Model):
         return self.nome
 
 class Aluno(models.Model):
-    STATUS_CHOICES = {
-        "1": "formado",
-        "2": "cursando",
-    }
+    STATUS_CHOICES = [
+        ("1", "formado"),
+        ("2", "cursando"),
+    ]
     #definindo os campos do modelo
     nome = models.CharField(max_length=200)
     curso = models.ManyToManyField(Curso)
@@ -63,10 +63,10 @@ class Aluno(models.Model):
         return self.nome
     
 class Professor(models.Model):
-    TITULACAO_CHOICES = {
-        "1": "doutor",
-        "2": "mestre",
-    }
+    TITULACAO_CHOICES = [
+        ("1", "doutor"),
+        ("2", "mestre"),
+    ]
     nome = models.CharField(max_length=200)
     curso = models.ForeignKey(Curso, on_delete=models.CASCADE)
     titulacao = models.IntegerField(choices=TITULACAO_CHOICES)
