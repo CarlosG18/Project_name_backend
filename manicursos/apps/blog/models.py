@@ -23,7 +23,7 @@ class Contato(models.Model):
         "out": "Outro",
     }
     
-    assunto = models.CharField(max_length=3,choices=ASSUNTO_CHOICES)
+    assunto = models.CharField(max_length=3,choices=ASSUNTO_CHOICES,default='rec')
     nome = models.CharField(max_length=200)
     email = models.EmailField()
     mensagem = models.TextField() 
