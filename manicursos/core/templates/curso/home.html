@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'img/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'img/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'img/favicon-16x16.png' %}">
+    <link rel="manifest" href="{% static 'img/site.webmanifest' %}">
+    <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}" type="image/x-icon">
+    
+    <!--- links para fontes-->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/cursos.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/aluno-aprova.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/sobre.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/barra.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/imagens-laterais.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/nav.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/footer.css' %}"> 
+    <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}"> 
+     
+
+</head>
+<body>
+
+    <div  style="float: inline-start; clear: none;" class="barra">
+
+        <div class="imagem">
+            <a href="{% url 'curso:home' %}">
+                <img src="{% static 'img/manilogo.svg' %}">
+            </a>
+        </div>
+
+        <!--  <img class="imagem" src="../img/manilogo.svg"> -->
+        
+        <div><p class="line"></p></div> 
+
+        <div style="border-bottom: 10px solid white;" class="frame">
+
+          <!-- <div><p class="line"></p></div> -->
+
+          <a class="frame" href = "{% url 'curso:home' %}">HOME</a>
+            <a class="frame" href = "{% url 'curso:sobre' %}">SOBRE</a>
+            <a class="frame" href = "{% url 'curso:cursos' %}">CURSOS</a>
+            <a class="frame" href = "{% url 'blog:blog' %}">BLOG</a>
+            <a class="frame" href = "{% url 'blog:contato' %}">CONTATO</a>
+
+        </div>
+
+     </div>
+
+
+    <div class="imagens-laterais">
+
+        <div class="lateral-6">
+            <img src="{% static 'img/home/lateral-6.png' %}">
+        </div>
+    
+        <div class="lateral-5">
+            <img src="{% static 'img/home/lateral-5.png' %}">
+        </div>
+    
+        <div class="lateral-4">
+            <img src="{% static 'img/home/lateral-4.png' %}">
+        </div>
+    
+        <div class="lateral-3">
+            <img src="{% static 'img/home/lateral-3.png' %}">
+        </div>
+    
+        <div class="lateral-2">
+            <img src="{% static 'img/home/lateral-2.png' %}">
+        </div>
+    
+        <div class="lateral-1">
+            <img src="{% static 'img/home/lateral-1.png' %}">
+        </div>
+    
+    </div>
+    
+      <header>
+    
+        <div class="box-header">
+            <h1 style="margin-top: -830px;">Bem vindo a educação <span class="barraLaranja">Mani</span> de <span class="text-orange">qualidade</span></h1>
+            
+            <div class="subtitle">
+                <p>Com a<span class="inline mani-cursos"> Mani cursos </span> você pode ficar tranquilo, seu futuro está em boas mãos</p>
+            </div>
+            
+            <div class="explorar flex">
+                
+                <a class="link-explorar" href="{% url 'curso:cursos' %}">
+                    <div class="circle-explorar bg-orange">
+                        <img src="{% static 'img/graphics/Line.svg' %}" alt="">
+                    </div>
+                    <p class="text-explorar">explorar cursos</p>
+                </a>
+    
+                <div class="estudando flex">
+                    <div class="circles">
+                        <div class="circle-aluno"><img src="{% static 'img/home/icon 001 1.svg' %}" alt=""></div>
+                        <div class="circle-aluno"><img src="{% static 'img/home/icon 002 1.svg' %}" alt=""></div>
+                        <div class="circle-aluno"><img src="{% static 'img/home/icon 003 1.svg' %}" alt=""></div>
+                    </div>
+                    <p>78.926 alunos</p>
+                    <p>estudando agora</p>
+                </div>
+            
+            </div>
+    
+        
+        </div>
+    
+        <div class="fotos">
+    
+        </div>
+    
+    </header>
+    
+    <div class="circle-full c1 bg-orange"></div>
+    <div class="circle-full c2 bg-orange"></div>
+    <div class="circle-full c3 bg-orange"></div>
+    <div class="circle-full c4 bg-orange"></div>
+    
+    <div class="circle-full2 c-1 bg-black"></div>
+    <div class="circle-full2 c-2 bg-black"></div>
+    
+    <div class="circle-empty c-1-1"></div>
+    <div class="circle-empty-1 c-1-2"></div>
+    
+    <div class="circle-full-70 bg-black"></div>
+    
+    <div class="circle-dotted bg-black"></div>
+    
+    <!--------------------------------- cursos mais populares --------------------------------------->
+    <section>
+        <h1 class="fs-45">Cursos mais populares</h1>
+        
+        <div class="box-right">
+    
+            <div class="circle">
+                <img class="arrow-left" src="{% static 'img/graphics/seta-direita.png' %}" alt="arrow-left">
+            </div>
+            <div class="circle">
+                <img src="{% static 'img/graphics/seta-direita.png' %}" alt="arrow-right">
+            </div>
+        </div>
+    
+        <div class="card-master">
+            {% for curso in cursos %}
+                <div class="card">
+    
+                    <div class="img-card">
+                        <img src="{{curso.imagem.url}}" alt="imagem-curso-{{curso.nome}}">
+                    </div>
+    
+                    <div class="card-header">
+                        <h1 class="card-title">{{curso.nome}}</h1>
+                        <div class="avaliacao">   
+                            <img src="{% static 'img/graphics/estrela.png' %}" alt="estrela">
+                            <p>({{curso.nota}})</p>
+                        </div>
+                    </div>
+    
+                    <h2>{{curso.get_modalidade_display}} - {{curso.carga_horaria}}h semanais - {{curso.get_nivel_display}}</h2>
+    
+                    <p class="descricao">{{curso.descricao}}</p>
+    
+                    <div class="card-footer">
+                        <div class="preco">
+                            <p class="preco-destaque">24x de R$ 410,90</p>
+                            <p class="preco-a-vista">ou R${{curso.preco}} à vista</p>
+                        </div>
+                        <button>ver mais</button>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+    
+    <!---------------------------------------- nossa historia --------------------------------------->
+    
+    <div class="box-nossa">
+        <div class="container">
+            <div class="carrossel carrossel-tam">
+                <div class="img-carrossel img1">
+                    <img src="../../static/img/sobre/PH HIST 001.jpg" alt="">
+                </div>
+                <div class="img-carrossel img2">
+                    <img src="../../static/img/sobre/PH HIST 002.jpg" alt="">
+                </div>
+                <div class="img-carrossel img3">
+                    <img src="../../static/img/sobre/PH HIST 003.jpg" alt="">
+                </div>
+                
+            </div>
+            <div class="nav">
+                <div class="circle-carrossel active"></div>
+                <div class="circle-carrossel"></div>
+                <div class="circle-carrossel"></div>
+            </div>
+        </div>
+        
+        <div class="textoUm">
+            <h1 class="titulos">Nossa <span class="barraLaranja">História</span></h1>
+            <p id="descricaoUm">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                incididunt ut labore et
+                dolore magna aliqua. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.</p>
+        </div>
+    </div>
+    
+    <!---------------------------------- quem já foi aluno aprova! ----------------------------------->
+    
+    <div class="box-aluno">
+        <h1 class="mb-50 fs-45">Quem já foi aluno <span class="text-orange">aprova!</span></h1>
+        
+        <div class="slider-aluno">
+            {% for aluno in alunos %}
+            <div class="card-aluno">
+                <img class="br-40" src="{{aluno.imagem.url}}" alt="">
+                <div class="descricao-aluno">
+                    <p class="p-nome">{{aluno.nome}}</p>
+                    <p class="p-curso">{{aluno.curso.nome}} ({{aluno.data_entrada}}-{{aluno.data_saida}})</p>
+                    <p class="p-descricao">"lorem ipsum dolor sit amet consectetur. id nunc ultrices eget risus at accumsan. Urna</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="base">
+
+        <a href="{% url 'curso:home' %}">
+            <img class="logo" src="{% static 'img/manilogo.svg' %}">
+        </a>
+        
+        <div class="bloco-principal">
+
+           <div class="bloco-1">
+
+            <h4>Entre em contato</h4>
+
+            <p>contato@manicursos.com.br</p>
+            <p>+1-2345-6789</p>
+            <p>23 Cornelia St, NY 10014, EUA</p>
+            <a href="https://www.facebook.com/ejectufrn/" target="_blank">
+                <img class="redes" src="{% static 'img/redes_sociais.svg' %}"> 
+            </a>
+            
+
+           </div>
+
+           
+           <div class="bloco-2">
+
+            <h4>FAQ</h4>
+
+            <p>Auctor volupat.</p>
+            <p>Fermentum turpis.</p>
+            <p>Mi consequat.</p>
+            <p>Amet venenatis.</p>
+            <p>Convalis porttitor.</p>
+
+           </div>
+
+           <div class="bloco-3">
+
+            <h4>Central de Ajuda</h4>
+
+            <p>Egestas vitae.</p>
+            <p>Viverra Iorem ac.</p>
+            <p>Eget ac tellus.</p>
+            <p>Erat nulla.</p>
+            <p>Vulputate proin.</p>
+
+           </div>
+
+
+        </div>
+
+        <div class="copyright">
+
+            <p>Copyright © 2023. All rights reserved.</p>
+            
+           </div>
+           
+
+       
+    </div>
+
+    <script src="{% static 'js/carrossel.js' %}"></script>    
+</body>
+</html>

@@ -1,0 +1,42 @@
+{% extends '../base.html' %}
+{% load static %}
+
+{% block title %}Manicursos | Noticias {% endblock %}
+
+{% block style %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/blog.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+{% endblock %}
+
+{% block main %}
+<header>
+    <div class="headline-container">
+        <h1 class="headline-h1">Últimas Notícias</h1>
+        <p class="headline-p">Est recusandae fugit qui quia voluptas ut ratione</p>
+        <p class="headline-p">iusto aut accusamus voluptatem.</p>
+    </div>
+</header>
+
+<div class="flex end">
+    <div class="busca">
+        <input type="text" class="txtBusca" placeholder="Buscar curso"/>
+        <div class="box-img">
+            <img class="lupa" src="{% static 'img/graphics/search-outline.svg' %}" alt="Buscar"/>
+        </div>
+    </div>
+</div>
+
+
+<div class="banner-container">
+    {% for noticia in noticias %}
+    <div class="banner-card">
+        <img class="banner-imagem" src="{{noticia.imagem.url}}" alt="Imagem Banner">
+        <h1 class="banner-titulo">{{noticia.titulo}}</h1>
+        <p class="banner-paragrafo">{{noticia.subtitulo}}</p>
+        <p class="banner-data"><img src="{% static 'img/graphics/icon-heart.png' %}">10 de outubro de 2023</p>
+        <a href="{% url 'blog:noticia' noticia.id %}" class="banner-bottom">LER MAIS</a>
+        </div>
+    {% endfor %}
+    <div class="custom-button">Carregar mais</div>
+</div>
+{% endblock%}

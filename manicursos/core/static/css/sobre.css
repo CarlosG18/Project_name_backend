@@ -1,0 +1,236 @@
+/* ---------------------------------------- carrossel -------------------------------------------------------------*/
+
+.container{
+    position: relative;
+}
+
+.carrossel{
+    position: relative;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.404);
+}
+
+.carrossel-tam1{
+    width: 500px;
+    height: 250px;
+}
+
+.img-carrossel{
+    position: absolute;
+    width: 100%;
+    height: 250px;
+    transition: all 1s ease-in;
+}
+
+.img-carrossel > img{
+    width: 100%;
+}
+
+.img-carrossel1{
+    position: absolute;
+    width: 100%;
+    height: 250px;
+    transition: all 1s ease-in;
+}
+
+.img-carrossel1 > img{
+    width: 100%;
+}
+
+.nav{
+    position: absolute;
+    bottom: 0;
+    left: 31%;
+    width: 200px;
+    height: 50px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.circle-carrossel{
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    border: 2px solid white;
+    transition: all 0.3s ease;
+}
+
+.circle-carrossel:hover{
+    background-color: white;
+    cursor: pointer;
+}
+
+.active{
+    background-color: white;
+}
+
+.circle-carrossel1{
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    border: 2px solid white;
+    transition: all 0.3s ease;
+}
+
+.circle-carrossel1:hover{
+    background-color: white;
+    cursor: pointer;
+}
+
+.active1{
+    background-color: white;
+}
+.containerUm {
+    display: flex;
+    margin-top: 60px;
+    justify-content: center;
+    height: 250px;
+}
+
+.textoUm {
+    margin-left: 40px;
+}
+
+#descricaoUm {
+    font-family: 'Montserrat';
+    font-size: 18px;
+    font-weight: 400;
+    width: 536px;
+    color: #262626;
+}
+
+.img2{
+    right: -100%;
+}
+
+.img3{
+    right: -100%;
+}
+
+.img5{
+    right: -100%;
+}
+
+.img6{
+    right: -100%;
+}
+
+/* ------------------------------------------------fim do carrossel -------------------------------------------------*/
+.containerDois {
+    display: flex;
+    margin-top: 150px;
+    justify-content: center;
+    height: 250px;
+}
+
+.textoDois {
+    margin-right: 40px;
+}
+
+#descricaoDois {
+    font-family: 'Montserrat';
+    font-size: 18px;
+    font-weight: 400;
+    width: 536px;
+    color: #262626
+}
+
+.titulos {
+    font-size: 48px;
+    margin-bottom: 29px;
+}
+
+.containerTres {
+    display: flex;
+    margin: 130px 0px 130px 0px;
+    justify-content: center;
+
+}
+
+#background {
+    display: flex;
+    flex-direction: column;
+    background-image: url('../img/sobre/Rectangle_604.svg');
+    background-repeat: no-repeat;
+    width: 1317px;
+    height: 580px;
+    padding: 110px 0px 0px 84px;
+    box-sizing: border-box;
+}
+
+#titulo3 {
+    color: white;
+    font-size: 64px;
+    font-weight: 700;
+    width: 759px;
+    margin: 0px;
+}
+
+#texto3 {
+    color: white;
+    font-family: 'Montserrat';
+    font-weight: 400;
+    font-size: 20px;
+    width: 616px;
+    margin-top: 15px;
+}
+
+.containerQuatro {
+    background-color: #F97B22;
+    border-radius: 300px 300px 0px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#titulo4 {
+    font-family: 'Montserrat';
+    font-weight: 700;
+    font-size: 60px;
+    color: white;
+    margin-top: 59px;
+}
+
+#texto4 {
+    font-family: 'Montserrat';
+    color: white;
+    font-weight: 400;
+    font-size: 27px;
+    width: 907px;
+    margin-top: 29px;
+}
+
+.containerImagens {
+    display: flex;
+    margin: 90px 0px 105px 0px;
+}
+
+.conjunto {
+    margin-right: 45px;
+}
+
+.nomes {
+    color: white;
+    font-family: 'Montserrat';
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.formacoes {
+    color: white;
+    font-size: 12px;
+    font-family: 'Montserrat';
+    font-weight: 500;
+    margin-top: 5px;
+}
+
+.legenda {
+    color: white;
+    margin-top: 30px;
+    font-size: 14px;
+    font-family: 'Montserrat';
+    width: 289px;
+    font-weight: 400;
+}

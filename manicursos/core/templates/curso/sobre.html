@@ -1,0 +1,97 @@
+{% extends '../base.html' %}
+{% load static %}
+
+{% block title %}Manicursos | Sobre {% endblock %}
+
+{% block style %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/sobre.css' %}">
+{% endblock %}
+
+{% block main %}
+
+<div class="containerUm">
+    <div class="container">
+        <div class="carrossel carrossel-tam1">
+            <div class="img-carrossel img1">
+                <img src="../../static/img/sobre/PH HIST 001.jpg" alt="">
+            </div>
+            <div class="img-carrossel img2">
+                <img src="../../static/img/sobre/PH HIST 002.jpg" alt="">
+            </div>
+            <div class="img-carrossel img3">
+                <img src="../../static/img/sobre/PH HIST 003.jpg" alt="">
+            </div>
+            
+        </div>
+        <div class="nav">
+            <div class="circle-carrossel active"></div>
+            <div class="circle-carrossel"></div>
+            <div class="circle-carrossel"></div>
+        </div>
+    </div>
+    
+    <div class="textoUm">
+        <h1 class="titulos">Nossa <span class="barraLaranja">História</span></h1>
+        <p id="descricaoUm">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+            incididunt ut labore et
+            dolore magna aliqua. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.</p>
+    </div>
+</div>
+
+<div class="containerDois">
+    <div class="textoDois">
+        <h1 class="titulos">Nossos <span class="barraLaranja">Valores</span></h1>
+        <p id="descricaoDois">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+            incididunt ut labore et
+            dolore magna aliqua. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.</p>
+    </div>
+
+    <div class="container">
+        <div class="carrossel carrossel-tam1">
+            <div class="img-carrossel1 img4">
+                <img src="../../static/img/sobre/PH VAL 001.jpg" alt="">
+            </div>
+            <div class="img-carrossel1 img5">
+                <img src="../../static/img/sobre/PH VAL 002.jpg" alt="">
+            </div>
+            <div class="img-carrossel1 img6">
+                <img src="../../static/img/sobre/PH VAL 003.jpg" alt="">
+            </div>
+            
+        </div>
+        <div class="nav">
+            <div class="circle-carrossel1 active1"></div>
+            <div class="circle-carrossel1"></div>
+            <div class="circle-carrossel1"></div>
+        </div>
+    </div>
+
+</div>
+<div class="containerTres">
+    <div id="background">
+        <h1 id="titulo3"><span class="barraLaranja">Os melhores</span> professores do mercado</h1>
+        <p id="texto3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sapien, est felis, sagittis viverra
+            nulla mattis scelerisque. Eget cras integer.</p>
+    </div>
+</div>
+<div class="containerQuatro">
+    <h1 id="titulo4">Nossa Equipe</h1>
+    <p id="texto4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sed scelerisque elit. Sed
+        eget tincidunt augue, nec tempus tellus. Quisque quis felis in felis posuere interdum.</p>
+    <div class="containerImagens">
+        {% for professor in professores %}
+            <div class="conjunto">
+                <img src="{{professor.imagem.url}}">
+                <h2 class="nomes">{{professor.nome}}</h2>
+                <h3 class="formacoes">{{professor.get_titulacao_display}} EM {{professor.curso.nome}}</h3>
+                <h4 class="legenda">Lorem ipsum dolor sit amet, consectetur adipiscing elit. </h4>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock%}
+
+{% block script %}
+    <script src="{% static 'js/carrossel.js' %}"></script>
+    <script src="{% static 'js/carrossel1.js' %}"></script>
+{% endblock %}

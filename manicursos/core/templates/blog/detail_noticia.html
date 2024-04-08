@@ -1,0 +1,53 @@
+{% extends '../base.html' %}
+{% block title %}Manicursos | Noticia {% endblock %}
+{% load static %}
+
+{% block style %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/detail_noticia.css' %}">
+{% endblock %}
+
+
+{% block main %}
+
+    <header>
+        <div class="box-img">
+            <img src="{{noticia.imagem.url}}" alt="">
+        </div>
+        <h1>{{noticia.titulo}}</h1>
+        <p>{{noticia.subtitulo}}</p>
+    </header>
+
+    <div class="headline">
+        <div class="source">
+            <p><strong>por {{noticia.criador}}</strong></p>
+            <p>{{noticia.data}}</p>
+        </div>
+        <div class="redes">
+            <div class="box-img-rs"><img src="../../static/img/graphics/Vector.svg" alt="logo-whathsapp"></div>
+            <div class="box-img-rs"><img src="../../static/img/graphics/Vector(1).svg" alt="logo-facebook"></div>
+            <div class="box-img-rs"><img src="../../static/img/graphics/conexao.png" alt="icon-conexão"></div>
+        </div>
+    </div>
+
+    <main>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus modi at assumenda ut, tempore iure, neque impedit atque a fuga unde quisquam eum quos sunt eius. Assumenda minima consequuntur corporis?</p>
+
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut consectetur quasi, consequatur nihil aperiam corporis dolores natus ducimus temporibus ad. Magni expedita architecto, odio itaque dolore odit neque a cum. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi ex tenetur itaque sequi maxime cupiditate voluptatibus rerum. Sed eum, animi totam a aliquid veritatis minus illo, quas commodi aliquam nesciunt!</p>
+    
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum tempora eos odio qui provident maiores quidem laudantium, explicabo iste mollitia ratione commodi modi, inventore fuga quo repellat alias? Veritatis, quae.</p>
+
+        <div class="flex text-img">
+            <div class="flex column texto">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse perspiciatis quam eligendi omnis, sed, accusantium voluptatem aut provident quo totam corporis fugiat dicta ducimus ipsam adipisci. Cumque consequatur fugit deleniti? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis eligendi, repellat iste alias officia voluptate eaque sit rerum minima eveniet nesciunt deserunt iusto a dolorem nisi ab et corrupti accusantium!</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, id sequi, perspiciatis beatae, error ipsum minima magni voluptatibus dignissimos non ducimus excepturi maxime minus doloremque tempora quod quasi possimus distinctio.</p>
+            </div>
+            <div><img src="{% static 'img/noticias/Rectangle 607.svg' %}" alt=""></div>
+        </div>
+
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cupiditate, laboriosam rerum. Dolorum non nostrum inventore ab eos ex voluptatibus nemo at quisquam. Culpa, repellat laboriosam atque ipsam sunt eveniet incidunt!</p>
+
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. At, facere? Beatae nam nobis laboriosam saepe quis harum ex. Magni incidunt laudantium repellat temporibus voluptatibus dolorum ad nobis optio libero officiis! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi nisi deserunt maxime repudiandae, harum ullam quibusdam necessitatibus consequuntur neque ea accusamus soluta velit aut ad reiciendis quisquam, eligendi tempora quas.</p>
+
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iste nulla earum explicabo non atque. Dignissimos quas alias, ut ratione sapiente sunt ipsa beatae commodi ipsum ab deserunt. Temporibus, pariatur eligendi.</p>
+    </main>
+{% endblock%}

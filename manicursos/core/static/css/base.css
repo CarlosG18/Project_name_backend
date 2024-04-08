@@ -1,0 +1,57 @@
+*{
+    font-family: 'Montserrat';
+}
+
+:root{
+    --laranja: #ff7000;
+}
+
+.flex{
+    display: flex;
+}
+
+.center{
+    align-items: center;
+}
+
+.barraLaranja {
+    text-decoration: underline;
+    text-decoration-color: #F97B22;
+    text-underline-offset: 4px;
+}
+
+.inline{
+    display: contents;
+}
+
+.text-orange{
+    color: var(--laranja)
+}
+
+.bg-orange{
+    background-color: var(--laranja);
+}
+
+.bg-black{
+    background-color: black;
+}
+
+.mb-50{
+    margin-bottom: 50px;
+}
+
+.fs-45{
+    font-size: 45px;
+}
+
+.br-40{
+    border-radius: 40px;
+}
+
+.end{
+    justify-content: end;
+}
+
+.column{
+    flex-direction: column;
+}

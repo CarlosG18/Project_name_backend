@@ -1,0 +1,269 @@
+{% extends '../base.html' %}
+{% load static %}
+{% block title %}Manicursos | Cursos {% endblock %}
+{% block style %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/cursos.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/carrossel.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/aluno-aprova.css' %}">
+{% endblock %}
+
+{% block main %}
+
+<!---------------------------------------- carrossel -------------------------------------------->
+<header>
+    <div class="carrossel">
+        <div class="text-header">
+            <h1 class="title-text-header">Bem vindo a <span class="barraLaranja">educação</span> Mani de qualidade</h1>
+            <p class="subtitle-text-header">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto quod quae expedita iure, odit neque a excepturi fugiat facilis nesciunt debitis eveniet amet? Officia fuga quisquam sint labore. Recusandae, placeat!</p>
+        </div>
+        
+        <div class="img-carrossel img1">
+            <img src="{% static 'img/carrossel/PH_001.jpg' %}" alt="">
+        </div>
+        <div class="img-carrossel img2">
+            <img src="{% static 'img/carrossel/PH_002.jpg' %}" alt="">
+        </div>
+        <div class="img-carrossel img3">
+            <img src="{% static 'img/carrossel/PH_003.jpeg' %}" alt="">
+        </div>
+        
+    </div>
+    <div class="nav">
+        <div class="circle-carrossel active"></div>
+        <div class="circle-carrossel"></div>
+        <div class="circle-carrossel"></div>
+    </div>
+</header>
+
+
+
+<!--------------------------------- cursos mais populares --------------------------------------->
+<section>
+    <h1 class="title">Cursos mais populares</h1>
+    
+    <div class="box-right">
+
+        <div class="circle">
+            <img class="arrow-left" src="{% static 'img/graphics/seta-direita.png' %}" alt="arrow-left">
+        </div>
+        <div class="circle">
+            <img src="{% static 'img/graphics/seta-direita.png' %}" alt="arrow-right">
+        </div>
+    </div>
+
+    <div class="card-master">
+        {% for curso in cursos_populares %}
+            <div class="card">
+
+                <div class="img-card">
+                    <img src="{{curso.imagem.url}}" alt="imagem-curso-{{curso.nome}}">
+                </div>
+
+                <div class="card-header">
+                    <h1 class="card-title">{{curso.nome}}</h1>
+                    <div class="avaliacao">   
+                        <img src="{% static 'img/graphics/estrela.png' %}" alt="estrela">
+                        <p>({{curso.nota}})</p>
+                    </div>
+                </div>
+
+                <h2>{{curso.get_modalidade_display}} - {{curso.carga_horaria}}h semanais - {{curso.get_nivel_display}}</h2>
+
+                <p class="descricao">{{curso.descricao}}</p>
+
+                <div class="card-footer">
+                    <div class="preco">
+                        <p class="preco-destaque">24x de R$ 410,90</p>
+                        <p class="preco-a-vista">ou R${{curso.preco}} à vista</p>
+                    </div>
+                    <button>ver mais</button>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</section>
+
+<!----------------------------------- todos os cursos ----------------------------------------->
+<section>
+    <h1 class="title">Todos os cursos</h1>
+    
+    <!------------------------------- ciencias humanas ---------------------------------------->
+    <div class="box">
+        <h1>Ciências Humanas</h1>
+        <div class="arrows">
+            <div class="circle">
+                <img class="arrow-left" src="{% static 'img/graphics/seta-direita.png' %}" alt="arrow-left">
+            </div>
+            <div class="circle">
+                <img src="{% static 'img/graphics/seta-direita.png' %}" alt="arrow-right">
+            </div>
+        </div>
+    </div>
+    
+    <div class="card-master">
+        {% for curso in cursos_humanas %}
+            <div class="card-small">
+
+                <div class="img-card-small">
+                    <img src="{{curso.imagem.url}}" alt="imagem-curso-{{curso.nome}}">
+                </div>
+
+                <div class="card-title-small">
+                    <h1>{{curso.nome}}</h1>
+                </div>
+                
+
+                <h2 class="subtitle-small">{{curso.get_modalidade_display}} - {{curso.carga_horaria}}h semanais - {{curso.get_nivel_display}}</h2>
+
+                <div class="card-detalhes">
+                    <div class="flex center small">
+                        <p class="small">Mais detalhes</p>
+                        <img class="arrow-down" src="{% static 'img/graphics/seta-para-baixo.png' %}" alt="">
+                    </div>    
+                    <div class="avaliacao small">   
+                        <img src="{% static 'img/graphics/estrela.png' %}" alt="estrela">
+                        <p>({{curso.nota}})</p>
+                    </div>
+                </div>
+               
+                <p class="descricao hidden slide">{{curso.descricao}}</p>
+
+                <div class="card-footer margin-small-start footersmall">
+                    <div class="preco small">
+                        <p class="preco-destaque">24x de R$ 410,90</p>
+                        <p class="preco-a-vista">ou R${{curso.preco}} à vista</p>
+                    </div>
+                    <button>ver mais</button>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+    <!------------------------------------- ciencias exatas ------------------------------------->
+    <div class="box">
+        <h1>Ciências Exatas</h1>
+        <div class="arrows">
+            <div class="circle">
+                <img class="arrow-left" src="{% static 'img/graphics/seta-direita.png' %}" alt="arrow-left">
+            </div>
+            <div class="circle">
+                <img src="{% static 'img/graphics/seta-direita.png' %}" alt="arrow-right">
+            </div>
+        </div>
+    </div>
+    
+    <div class="card-master">
+        {% for curso in cursos_exatas %}
+            <div class="card-small">
+
+                <div class="img-card-small">
+                    <img src="{{curso.imagem.url}}" alt="imagem-curso-{{curso.nome}}">
+                </div>
+
+                <div class="card-title-small">
+                    <h1>{{curso.nome}}</h1>
+                </div>
+                
+
+                <h2 class="subtitle-small">{{curso.get_modalidade_display}} - {{curso.carga_horaria}}h semanais - {{curso.get_nivel_display}}</h2>
+
+                <div class="card-detalhes">
+                    <div class="flex center small">
+                        <p class="small">Mais detalhes</p>
+                        <img class="arrow-down" src="{% static 'img/graphics/seta-para-baixo.png' %}" alt="">
+                    </div>    
+                    <div class="avaliacao small">   
+                        <img src="{% static 'img/graphics/estrela.png' %}" alt="estrela">
+                        <p>({{curso.nota}})</p>
+                    </div>
+                </div>
+               
+                <p class="descricao hidden slide">{{curso.descricao}}</p>
+
+                <div class="card-footer margin-small-start footersmall">
+                    <div class="preco small">
+                        <p class="preco-destaque">24x de R$ 410,90</p>
+                        <p class="preco-a-vista">ou R${{curso.preco}} à vista</p>
+                    </div>
+                    <button>ver mais</button>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+    <!------------------------------------- biomedica ------------------------------------------->
+    <div class="box">
+        <h1>Biociências</h1>
+        <div class="arrows">
+            <div class="circle">
+                <img class="arrow-left" src="{% static 'img/graphics/seta-direita.png' %}" alt="arrow-left">
+            </div>
+            <div class="circle">
+                <img src="{% static 'img/graphics/seta-direita.png' %}" alt="arrow-right">
+            </div>
+        </div>
+    </div>
+    
+    <div class="card-master">
+        {% for curso in cursos_bio %}
+            <div class="card-small">
+
+                <div class="img-card-small">
+                    <img src="{{curso.imagem.url}}" alt="imagem-curso-{{curso.nome}}">
+                </div>
+
+                <div class="card-title-small">
+                    <h1>{{curso.nome}}</h1>
+                </div>
+                
+
+                <h2 class="subtitle-small">{{curso.get_modalidade_display}} - {{curso.carga_horaria}}h semanais - {{curso.get_nivel_display}}</h2>
+
+                <div class="card-detalhes">
+                    <div class="flex center small">
+                        <p class="small">Mais detalhes</p>
+                        <img class="arrow-down" src="{% static 'img/graphics/seta-para-baixo.png' %}" alt="">
+                    </div>    
+                    <div class="avaliacao small">   
+                        <img src="{% static 'img/graphics/estrela.png' %}" alt="estrela">
+                        <p>({{curso.nota}})</p>
+                    </div>
+                </div>
+               
+                <p class="descricao hidden slide">{{curso.descricao}}</p>
+
+                <div class="card-footer margin-small-start footersmall">
+                    <div class="preco small">
+                        <p class="preco-destaque">24x de R$ 410,90</p>
+                        <p class="preco-a-vista">ou R${{curso.preco}} à vista</p>
+                    </div>
+                    <button>ver mais</button>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</section>
+
+<!------------------------------------ quem foi aluno aprova ------------------------------------->
+<div class="box-aluno">
+    <h1 class="mb-50 fs-45">Quem já foi aluno <span class="text-orange">aprova!</span></h1>
+    
+    <div class="slider-aluno">
+        {% for aluno in alunos %}
+        <div class="card-aluno">
+            <img src="{{aluno.imagem.url}}" alt="">
+            <div class="descricao-aluno">
+                <p class="p-nome">{{aluno.nome}}</p>
+                <p class="p-curso">{{aluno.curso.nome}} ({{aluno.data_entrada}}-{{aluno.data_saida}})</p>
+                <p class="p-descricao">"lorem ipsum dolor sit amet consectetur. id nunc ultrices eget risus at accumsan. Urna</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock%}
+
+{% block script %}
+    <script src="{% static 'js/carrossel.js' %}"></script>
+{% endblock %}
