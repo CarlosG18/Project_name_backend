@@ -16,14 +16,14 @@ class Noticia(models.Model):
 
 class Contato(models.Model):
     ASSUNTO_CHOICES = {
-        "rec": "Reclamação",
-        "duv": "Dúvidas",
-        "cri": "Critica",
-        "aju": "Ajuda",
-        "out": "Outro",
+        "1": "Reclamação",
+        "2": "Dúvidas",
+        "3": "Critica",
+        "4": "Ajuda",
+        "5": "Outro",
     }
     
-    assunto = models.CharField(max_length=3,choices=ASSUNTO_CHOICES,default='rec')
+    assunto = models.IntegerField(choices=ASSUNTO_CHOICES)
     nome = models.CharField(max_length=200)
     email = models.EmailField()
     mensagem = models.TextField() 
