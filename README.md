@@ -23,3 +23,9 @@ O projeto se baseia na construção de um site de ensino ead chamado mani cursos
 - ![python-logo](https://img.shields.io/badge/python-3.10.12-yellow?style=for-the-badge&logo=python&labelColor=blue&logoColor=white)
 - ![django](https://img.shields.io/badge/django-5.0.3-228B22?style=for-the-badge&logo=django&labelColor=228B22)
 
+## 🌐 Deploy
+
+observe nossa aplicação em funcionamento.
+
+- o sistema da **Mani Cursos** pode ser acessado [🔗 por aqui](https://manicursosdeploy.pythonanywhere.com/curso/)
+
